@@ -1,0 +1,43 @@
+﻿@model Book_Users
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-black">Register Here!</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Name" class="p-0 text-dark"></label>
+            <input asp-for="Name" type="text" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="email" class="p-0 text-dark"></label>
+            <input asp-for="email" type="text" class="form-control" />
+            <span asp-validation-for="email" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="password" class="p-0 text-dark"></label>
+            <input asp-for="password" type="password" class="form-control" />
+            <span asp-validation-for="password" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="re_password" class="p-0 text-dark"></label>
+            <input asp-for="re_password" type="password" class="form-control" />
+            <span asp-validation-for="re_password" class="text-danger"></span>
+        </div>
+        <div class="row p-1">
+            <div class="col-6 col-md-3">
+                <button class="btn btn-primary form-control">Submit</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Registration" asp-action="Index" class="btn btn-outline-secondary form-control">Back to List</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
